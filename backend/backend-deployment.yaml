@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: k8s-backendcontainer
-        image: gcr.io/somnath007-402206/k8s-backend:tag
+        image: gcr.io/somnath007-402206/k8s-backend:latest
         ports:
         - containerPort: 8080
