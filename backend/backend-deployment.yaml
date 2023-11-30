@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: dbackend-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: lk8s-backend
@@ -17,13 +17,6 @@ spec:
         image: gcr.io/somnath007-402206/k8s-backend:latest
         ports:
         - containerPort: 3001
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
 ---
 
 apiVersion: v1
