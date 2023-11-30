@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dfrontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lk8s-frontend
+  template:
+    metadata:
+      labels:
+        app: lk8s-frontend
+    spec:
+      containers:
+      - name: k8s-frontendcontainer
+        image: gcr.io/somnath007-402206/k8s-frontend:latest
+        ports:
+        - containerPort: 3001
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-frontend-service
+spec:
+  selector:
+    app: lk8s-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3001
+  type: LoadBalancer
