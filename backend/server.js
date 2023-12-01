@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const port = 3001;
 const routes = require("./routes");
 
-const username = "root";
+const username = "adminuser";
 const password = "EPQ46jw3iL";
 
 main().catch((err) => console.log(err));
